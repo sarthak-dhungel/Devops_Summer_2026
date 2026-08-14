@@ -7,7 +7,7 @@ on:
     branches:
       - main
 jobs:
-  test:
+  test-secrets:
     runs-on: ubuntu-latest
     environment: simple-mern-todo
     steps:
@@ -16,4 +16,14 @@ jobs:
 
       - name: Print secret value
         run: 'echo "The secret value is: ${{ secrets.MY_SECRET }}"'
+
+  test-variables:
+    runs-on: ubuntu-latest
+    environment: simple-mern-todo
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Print variable value
+        run: 'echo "The variable value is: ${{ vars.MY_VARIABLE }}"'
   

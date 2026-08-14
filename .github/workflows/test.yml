@@ -1,0 +1,19 @@
+name : Secrets Test
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    envirnonment: simple-mern-todo
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Print secret value
+        run: echo "The secret value is: ${{ secrets.MY_SECRET }}"
+  

@@ -3,7 +3,7 @@ name: Backend CI/CD
 on:
   push:
     branches: [main]
-    paths: ['backend/**']
+    paths: ['simple-mern-todo/simple-mern-todo/backend/**']
 
 jobs:
   build-and-push:
@@ -16,7 +16,7 @@ jobs:
           DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
           DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
           IMAGE: sarthaktodomern
-          CONTEXT: ./backend
+          CONTEXT: ./simple-mern-todo/simple-mern-todo/backend
 
   deploy:
     needs: build-and-push

@@ -14,7 +14,7 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'ok' });
 });
 
-app.use('/api/todos', todoRoutes);e
+app.use('/api/todos', todoRoutes);
 
 const PORT = process.env.PORT || 5000;
 
